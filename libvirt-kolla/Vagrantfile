@@ -25,7 +25,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "my"
+  config.vm.box = "my-xenial64"
   config.vm.hostname =  Pathname.new(File.dirname(__FILE__)).basename
 
   proxy_ip = local_ip
@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
   config.proxy.no_proxy = "localhost,127.0.0.1,.example.com,10.0.2.15/24,192.168.33.10/24"
 
   #config.vm.network "public_network", :dev => "enp0s31f6", :mac => "5CA1AB1E0001", :mode => "bridge"
-  config.vm.network "forwarded_port", guest: 80, host: 8080, gateway_ports: true, host_ip: "*"
+  #config.vm.network "forwarded_port", guest: 80, host: 8080, gateway_ports: true, host_ip: "*"
 
   #config.ssh.insert_key = false
 
